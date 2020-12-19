@@ -1,0 +1,27 @@
+<script>
+    $(document).ready(function (){
+        $.getJSON('/allegiances', function(data){
+            data.forEach(element =>{
+                console.log(element['Name'])
+                table = document.getElementById("myTable");
+                newrow = document.createElement("tr");
+                table.appendChild(newrow);
+
+                n = document.createElement("td");
+                n.innerHTML = element['Name'];
+                newrow.appendChild(n);
+
+                aff = document.createElement("td");
+                aff.innerHTML = element['Affiliation'];
+                newrow.appendChild(aff);
+
+                all = document.createElement("td");
+                all.innerHTML = element['Allegiance'];
+                newrow.appendChild(all);
+                
+                
+            });
+;
+        });
+    });
+</script>
